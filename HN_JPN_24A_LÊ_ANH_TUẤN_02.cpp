@@ -1,16 +1,8 @@
 #include <stdio.h>
-#include <math.h>
+
 
 #define MAX_SIZE 100
 
-
-int kiemtrasonguyento(int n) {
-    if (n <= 1) return 0;
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) return 0;
-    }
-    return 1;
-}
 
 int main() {
     int arr[MAX_SIZE];
@@ -47,7 +39,7 @@ int main() {
             
             printf("Gia tri cac phan tu trong mang: ");
             for (int i = 0; i < soPhanTu; i++) {
-                printf("%d ", arr[i]);
+                printf("[%d] ", arr[i]);
             }
             printf("\n");
         } else if (luachon == 4) {
@@ -119,22 +111,8 @@ int main() {
                 printf("%d ", arr[i]);
             }
             printf("\n");
-        } else if (luachon == 9) {
-            
-            int foundkiemtrasonguyento = 0;
-            printf("Cac so nguyen to trong mang da duoc binh phuong: ");
-            for (int i = 0; i < soPhanTu; i++) {
-                if (kiemtrasonguyento(arr[i])) {
-                    foundkiemtrasonguyento = 1;
-                    printf("%d ", arr[i] * arr[i]);
-                }
-            }
-            if (!foundkiemtrasonguyento) {
-                printf("Khong co so nguyen to nao trong mang.\n");
-            } else {
-                printf("\n");
-            }
         }
+        
     } while (luachon != 11);
 
     printf("Cam on ban da su dung chuong trinh!\n");
